@@ -54,6 +54,7 @@ namespace Vidly_ASP.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var viewModel = new MovieFormViewModel
@@ -93,11 +94,13 @@ namespace Vidly_ASP.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
-        }
+        } 
 
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+            return View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)
