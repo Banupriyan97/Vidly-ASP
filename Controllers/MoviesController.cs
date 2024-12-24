@@ -42,6 +42,7 @@ namespace Vidly_ASP.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -94,7 +95,7 @@ namespace Vidly_ASP.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
-        } 
+        }
 
         public ActionResult Index()
         {
@@ -103,6 +104,7 @@ namespace Vidly_ASP.Controllers
             return View("ReadOnlyList");
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Details(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);

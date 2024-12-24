@@ -259,11 +259,16 @@
     <Compile Include="Migrations\202412240649424_AddDrivingLicenseToApplicationUser.Designer.cs">
       <DependentUpon>202412240649424_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412241657566_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\202412241657566_AddPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>202412241657566_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
@@ -596,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412240649424_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>202412240649424_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412241657566_AddPhoneToApplicationUser.resx">
+      <DependentUpon>202412241657566_AddPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
