@@ -28,5 +28,7 @@ namespace Vidly_ASP.Models
         [Range(1, 20)]
         [Display(Name = "Number in Stock")]
         public short NumberInStock { get; set; }
+
+        public byte NumberAvailable { get; set; }
     }
 }
